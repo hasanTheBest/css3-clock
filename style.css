@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 body {
   font-family: arial;
@@ -28,94 +29,72 @@ body {
 /* Clock Digit */
 .digit {
   position: absolute;
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* width: 100%; */
-  /* height: 100%; */
-  overflow: hidden;
   transform-origin: center;
 }
-.digit:nth-of-type(12),
-.digit:nth-of-type(6) {
-  height: 100%;
-  width: 2em;
-}
-.digit:nth-of-type(6) {
-  top: calc(150% - 1em);
+
+.digit > span {
+  position: relative;
 }
 
-.digit:nth-of-type(7) {
-  transform: rotate(30deg) translateX(-50%);
+.five-eleven,
+.four-ten {
+  flex-direction: row-reverse;
+  left: 0;
 }
-.digit:nth-of-type(3),
-.digit:nth-of-type(9),
-.digit:nth-of-type(2),
-.digit:nth-of-type(8),
-.digit:nth-of-type(4),
-.digit:nth-of-type(10),
-.digit:nth-of-type(1),
-.digit:nth-of-type(7),
-.digit:nth-of-type(5),
-.digit:nth-of-type(11) {
-  width: 100%;
-  height: 2em;
-}
-.digit:nth-of-type(2),
-.digit:nth-of-type(3),
-.digit:nth-of-type(4) {
-  text-align: right;
-}
-.digit:nth-of-type(4),
-.digit:nth-of-type(10) {
-  transform: rotate(30deg) translateY(-50%);
-  left: -16px;
-}
-.digit:nth-of-type(2),
-.digit:nth-of-type(8) {
-  transform: rotate(-30deg) translateY(-50%);
-  left: 16px;
+.twelve-six,
+.one-seven,
+.two-eight {
+  left: 0;
 }
 
-/* 1 and 7 */
-.digit:nth-of-type(1) {
-  text-align: left;
+/* Twelve and Six */
+.twelve-six {
+  transform: rotate(90deg);
+  top: calc(50% - 1rem);
+}
+.twelve-six > span {
+  transform: rotate(-90deg);
+}
+/* Three nine */
+.three-nine {
+  top: 50%;
+  flex-direction: row-reverse;
+}
+
+/* One Seven */
+.one-seven {
+  transform: rotate(120deg);
+}
+.one-seven > span {
+  transform: rotate(-120deg);
+}
+
+/* Two Eight */
+.two-eight {
+  transform: rotate(150deg);
+}
+.two-eight > span {
+  transform: rotate(-150deg);
+}
+
+/* Four Ten */
+.four-ten {
+  transform: rotate(30deg);
+}
+.four-ten > span {
+  transform: rotate(-30deg);
+}
+
+/* Five Eleven */
+.five-eleven {
   transform: rotate(60deg);
 }
-.digit:nth-of-type(7) {
+.five-eleven > span {
   transform: rotate(-60deg);
-  left: 0;
 }
-
-/* 5 and 11 */
-.digit:nth-of-type(5) {
-  transform: rotate(60deg);
-  text-align: right;
-  left: 0;
-}
-.digit:nth-of-type(11) {
-  transform: rotate(60deg) translateY(-50%);
-  left: -1rem;
-}
-
-/* .digit:nth-of-type(1) {
-  top: 0;
-} */
-/* .digit:nth-of-type(12) {
-  top: 0;
-}
-.digit:nth-of-type(1) {
-  top: 20%;
-}
-.digit:nth-of-type(7) {
-  bottom: 20%;
-}
-.digit:nth-of-type(6) {
-  top: 100%;
-}
-.digit:nth-of-type(3) {
-  left: 0;
-}
-.digit:nth-of-type(9) {
-  left: 100%;
-} */
