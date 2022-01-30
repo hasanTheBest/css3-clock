@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 body {
   font-family: arial;
@@ -61,6 +61,34 @@ body {
 .twelve-six > span {
   transform: rotate(-90deg);
 }
+/* Twelve */
+.digit > .twelve::before,
+/* .digit > .twelve::before::before,
+.digit > .twelve::after::after, */
+.digit > .twelve::after {
+  content: "";
+  width: 0.3rem;
+  height: 1rem;
+  position: absolute;
+  background-color: #000;
+}
+.digit > .twelve::before {
+  transform: rotate(6deg);
+  left: 150%;
+}
+.digit > .twelve::before::before {
+  transform: rotate(6deg);
+  left: 200%;
+}
+.digit > .twelve::after {
+  transform: rotate(-6deg);
+  left: -150%;
+}
+.digit > .twelve::after::after {
+  transform: rotate(-6deg);
+  left: -200%;
+}
+
 /* Three nine */
 .three-nine {
   top: 50%;
