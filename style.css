@@ -1,16 +1,35 @@
+:root {
+  --red: #ff2d55;
+  --blue: #00acee;
+  --orange: #efa506;
+  --green: #8dc63f;
+  --dark: #0d1028;
+  --light: #f5f4f7;
+  /* --gray: #707070; */
+  /* --shadow-text: #edeaf6; */
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+html {
+  font-size: 24px;
+}
 body {
   font-family: arial;
-  background-color: darksalmon;
+  background-color: var(--light);
+  color: var(--dark);
 }
 .page-title {
+  color: var(--blue);
   text-align: center;
   padding: 1.5rem;
   text-transform: uppercase;
+}
+.page-title > b {
+  color: var(--red);
 }
 .clock {
   width: 80vh;
@@ -23,11 +42,13 @@ body {
   display: flex;
   justify-content: space-between;
   border-radius: 50%;
-  border: 1.2rem solid #000;
   overflow: hidden;
-  box-shadow: 5px 8px 12px rgba(0, 0, 0, 0.4), 10px 16px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset, var(--red) 0px 0px 0px 6px,
+    var(--orange) 0px 0px 0px 12px, var(--blue) 0px 0px 0px 18px,
+    var(--dark) 0px 0px 0px 24px;
   aspect-ratio: 1 / 1;
-  background-color: rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
@@ -47,7 +68,7 @@ body {
   content: "";
   height: 0.2rem;
   width: 1rem;
-  background-color: #000;
+  background-color: var(--dark);
   position: absolute;
   top: 0;
 }
@@ -171,7 +192,7 @@ body {
 .clock-digits > .indicator:nth-of-type(26)::after {
   width: 1.2rem;
   height: 0.3rem;
-  background-color: darkslateblue;
+  background-color: var(--green);
 }
 
 /* ========== Digits ============= */
@@ -238,36 +259,44 @@ body {
   width: 30%;
   height: 1rem;
   border-radius: 0.7rem;
-  background-color: #000;
+  background-color: var(--dark);
   transform: rotate(120deg);
   animation: hours linear 21600s infinite;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .minute-hand {
   width: 35%;
   height: 0.5rem;
   border-radius: 0.4rem;
-  background-color: #000;
+  background-color: var(--blue);
   animation: minutes linear 3600s infinite;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .second-hand {
   width: 45%;
   height: 0.3rem;
-  background-color: #000;
+  background-color: var(--red);
   border-radius: 0.3rem;
   transform: rotate(270deg);
   animation: seconds 60s linear infinite;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .middle-circle {
   position: absolute;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 0.5rem;
+  height: 0.5rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #000;
+  background-color: var(--dark);
   border-radius: 50%;
+  box-shadow: var(--blue) 0px 0px 0px 4px, var(--green) 0px 0px 0px 8px,
+    var(--orange) 0px 0px 0px 12px, var(--red) 0px 0px 0px 16px,
+    var(--dark) 0px 0px 0px 20px;
 }
 
 /* ======== Animation ======== */
@@ -293,5 +322,15 @@ body {
   }
   to {
     transform: rotate(480deg);
+  }
+}
+
+/* =========== Responsiveness ============== */
+@media (max-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+  .clock {
+    width: 90vw;
   }
 }
