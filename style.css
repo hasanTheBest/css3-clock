@@ -5,8 +5,6 @@
   --green: #8dc63f;
   --dark: #0d1028;
   --light: #f5f4f7;
-  /* --gray: #707070; */
-  /* --shadow-text: #edeaf6; */
 }
 
 * {
@@ -37,7 +35,8 @@ body {
   margin: 0 auto;
   position: relative;
 }
-/* Clock digits */
+
+/* ========= Clock digits ============== */
 .clock-digits {
   display: flex;
   justify-content: space-between;
@@ -177,6 +176,7 @@ body {
 .clock-digits > .indicator:nth-of-type(30) {
   transform: rotate(calc(29 * 6deg));
 }
+
 /* ========== Minutes Mark ============== */
 .clock-digits > .indicator:nth-of-type(1)::before,
 .clock-digits > .indicator:nth-of-type(1)::after,
@@ -207,7 +207,7 @@ body {
   transform-origin: center;
 }
 
-/* Three Nine horizontal */
+/* Three Nine horizontal (starting) */
 .digit:nth-of-type(1) {
   transform: translateX(0);
 }
