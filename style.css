@@ -2,26 +2,30 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
 }
 body {
   font-family: arial;
+  background-color: darksalmon;
 }
 .page-title {
-  margin-bottom: 1em;
   text-align: center;
+  padding: 1.5rem;
+  text-transform: uppercase;
 }
 .clock {
   width: 80vh;
   aspect-ratio: 1 / 1;
-  background-color: rgba(0, 0, 0, 0.2);
   margin: 0 auto;
+  position: relative;
 }
 /* Clock digits */
 .clock-digits {
   display: flex;
   justify-content: space-between;
   border-radius: 50%;
+  border: 1.2rem solid #000;
+  overflow: hidden;
+  box-shadow: 5px 8px 12px rgba(0, 0, 0, 0.4), 10px 16px 24px rgba(0, 0, 0, 0.3);
   aspect-ratio: 1 / 1;
   background-color: rgba(0, 0, 0, 0.2);
   position: relative;
@@ -152,6 +156,23 @@ body {
 .clock-digits > .indicator:nth-of-type(30) {
   transform: rotate(calc(29 * 6deg));
 }
+/* ========== Minutes Mark ============== */
+.clock-digits > .indicator:nth-of-type(1)::before,
+.clock-digits > .indicator:nth-of-type(1)::after,
+.clock-digits > .indicator:nth-of-type(6)::before,
+.clock-digits > .indicator:nth-of-type(6)::after,
+.clock-digits > .indicator:nth-of-type(11)::before,
+.clock-digits > .indicator:nth-of-type(11)::after,
+.clock-digits > .indicator:nth-of-type(16)::before,
+.clock-digits > .indicator:nth-of-type(16)::after,
+.clock-digits > .indicator:nth-of-type(21)::before,
+.clock-digits > .indicator:nth-of-type(21)::after,
+.clock-digits > .indicator:nth-of-type(26)::before,
+.clock-digits > .indicator:nth-of-type(26)::after {
+  width: 1.2rem;
+  height: 0.3rem;
+  background-color: darkslateblue;
+}
 
 /* ========== Digits ============= */
 .digit {
@@ -211,38 +232,66 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform-origin: 0 50%;
 }
 .hour-hand {
-  width: 20%;
+  width: 30%;
   height: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   background-color: #000;
-  transform-origin: 0 0;
   transform: rotate(120deg);
+  animation: hours linear 21600s infinite;
 }
 
 .minute-hand {
-  width: 30%;
-  height: 0.8rem;
-  border-radius: 0.2rem;
+  width: 35%;
+  height: 0.5rem;
+  border-radius: 0.4rem;
   background-color: #000;
+  animation: minutes linear 3600s infinite;
 }
 .second-hand {
-  width: 30%;
-  height: 0.5rem;
+  width: 45%;
+  height: 0.3rem;
   background-color: #000;
   border-radius: 0.3rem;
-  transform-origin: 0 0;
-  transform: rotate(-60deg);
+  transform: rotate(270deg);
+  animation: seconds 60s linear infinite;
 }
 
 .middle-circle {
   position: absolute;
-  width: 8%;
-  height: 8%;
+  width: 2.8rem;
+  height: 2.8rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #000;
   border-radius: 50%;
+}
+
+/* ======== Animation ======== */
+@keyframes seconds {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+@keyframes minutes {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hours {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
 }
