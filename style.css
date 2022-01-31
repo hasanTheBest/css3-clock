@@ -287,16 +287,15 @@ body {
 
 .middle-circle {
   position: absolute;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.1rem;
+  height: 0.1rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--dark);
   border-radius: 50%;
-  box-shadow: var(--blue) 0px 0px 0px 4px, var(--green) 0px 0px 0px 8px,
-    var(--orange) 0px 0px 0px 12px, var(--red) 0px 0px 0px 16px,
-    var(--dark) 0px 0px 0px 20px;
+  box-shadow: var(--dark) 0px 0px 0px 8px, var(--blue) 0px 0px 0px 16px,
+    var(--red) 0px 0px 0px 24px;
 }
 
 /* ======== Animation ======== */
