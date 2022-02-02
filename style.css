@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 12px;
+  font-size: 16px;
 }
 body {
   font-family: arial;
@@ -336,43 +336,44 @@ body {
 }
 
 /* =========== Responsiveness ============== */
-@media (max-width: 1023.9px) {
+@media (max-width: 767px) {
   html {
     font-size: 12px;
+  }
+  .clock {
+    width: calc(90vw + 48px);
+  }
+}
+@media (min-width: 767.1px) and (max-width: 1023.9px) {
+  html {
+    font-size: 14px;
+  }
+  .clock {
+    width: calc(85vw + 48px);
+  }
+}
+@media (min-width: 1024px) and (max-width: 1365.9px) {
+  html {
+    font-size: 16px;
   }
   .clock {
     width: calc(80vw + 48px);
   }
 }
-@media (max-width: 1365.9px) {
+@media (min-width: 1366px) and (max-width: 1599.9px) {
   html {
-    font-size: 15px;
+    font-size: 18px;
   }
   .clock {
     width: calc(75vw + 48px);
   }
 }
-@media (max-width: 1366px) {
-  html {
-    font-size: 18px;
-  }
-  .clock {
-    width: calc(70vw + 48px);
-  }
-}
-@media (max-width: 1599.9px) {
-  html {
-    font-size: 20px;
-  }
-  .clock {
-    width: calc(60vw + 48px);
-  }
-}
+
 @media (min-width: 1600px) {
   html {
     font-size: 24px;
   }
   .clock {
-    width: calc(55vw + 48px);
+    width: calc(60vw + 48px);
   }
 }
