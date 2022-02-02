@@ -33,14 +33,11 @@ body {
 .clock-frame {
   padding: 1rem;
   padding-top: 0;
-  /* min-width: 400px; */
 }
 .clock {
-  /* width: 80vh; */
-  /* width: 80vw; */
   min-width: 400px;
   min-height: 400px;
-  width: calc(80vw + 48px);
+  width: calc(56.25vw + 48px);
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   position: relative;
@@ -216,6 +213,7 @@ body {
   left: 5%;
   transform: translate(-50%, -50%);
   transform-origin: center;
+  font-size: 2rem;
 }
 
 /* Three Nine horizontal (starting) */
@@ -264,10 +262,11 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translateY(-50%);
   transform-origin: 0 50%;
 }
 .hour-hand {
-  width: 30%;
+  width: calc(30% - 24px); /* box shadow */
   height: 1rem;
   border-radius: 0.7rem;
   background-color: var(--dark);
@@ -277,7 +276,7 @@ body {
 }
 
 .minute-hand {
-  width: 35%;
+  width: calc(35% - 24px); /* box shadow */
   height: 0.5rem;
   border-radius: 0.4rem;
   background-color: var(--blue);
@@ -286,7 +285,7 @@ body {
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .second-hand {
-  width: 45%;
+  width: calc(45% - 24px); /* box shadow */
   height: 0.3rem;
   background-color: var(--red);
   border-radius: 0.3rem;
@@ -341,39 +340,27 @@ body {
     font-size: 12px;
   }
   .clock {
-    width: calc(90vw + 48px);
+    width: calc(85vw + 48px);
   }
 }
 @media (min-width: 767.1px) and (max-width: 1023.9px) {
   html {
     font-size: 14px;
   }
-  .clock {
-    width: calc(85vw + 48px);
-  }
 }
 @media (min-width: 1024px) and (max-width: 1365.9px) {
   html {
     font-size: 16px;
-  }
-  .clock {
-    width: calc(80vw + 48px);
   }
 }
 @media (min-width: 1366px) and (max-width: 1599.9px) {
   html {
     font-size: 18px;
   }
-  .clock {
-    width: calc(75vw + 48px);
-  }
 }
 
 @media (min-width: 1600px) {
   html {
     font-size: 24px;
-  }
-  .clock {
-    width: calc(60vw + 48px);
   }
 }
