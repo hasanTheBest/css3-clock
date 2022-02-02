@@ -35,8 +35,6 @@ body {
   padding-top: 0;
 }
 .clock {
-  min-width: 400px;
-  min-height: 400px;
   width: calc(56.25vw + 48px);
   aspect-ratio: 1 / 1;
   margin: 0 auto;
@@ -340,12 +338,15 @@ body {
     font-size: 12px;
   }
   .clock {
-    width: calc(85vw + 48px);
+    width: calc(46.2vh + 48px);
   }
 }
 @media (min-width: 767.1px) and (max-width: 1023.9px) {
   html {
     font-size: 14px;
+  }
+  .clock {
+    width: calc(56.25vh + 48px);
   }
 }
 @media (min-width: 1024px) and (max-width: 1365.9px) {
