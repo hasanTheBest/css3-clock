@@ -263,14 +263,16 @@ body {
   transform: translateY(-50%);
   transform-origin: 0 50%;
 }
+
 .hour-hand {
   width: calc(30% - 24px); /* box shadow */
   height: 1rem;
   border-radius: 0.7rem;
   background-color: var(--dark);
   transform: rotate(120deg);
-  animation: hours linear 21600s infinite;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /* transition: transform 3600s linear; */
+  /* animation: hours linear 21600s infinite; */
 }
 
 .minute-hand {
@@ -278,19 +280,20 @@ body {
   height: 0.5rem;
   border-radius: 0.4rem;
   background-color: var(--blue);
-  animation: minutes linear 3600s infinite;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  /* transition: transform 60s linear; */
+  /* animation: minutes linear 3600s infinite; */
 }
 .second-hand {
   width: calc(45% - 24px); /* box shadow */
   height: 0.3rem;
   background-color: var(--red);
   border-radius: 0.3rem;
-  transform: rotate(270deg);
-  animation: seconds 60s linear infinite;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  /* transform: rotate(270deg); */
+  /* animation: seconds 60s linear infinite; */
 }
 
 .middle-circle {
@@ -307,7 +310,7 @@ body {
 }
 
 /* ======== Animation ======== */
-@keyframes seconds {
+/* @keyframes seconds {
   from {
     transform: rotate(270deg);
   }
@@ -330,7 +333,7 @@ body {
   to {
     transform: rotate(480deg);
   }
-}
+} */
 
 /* =========== Responsiveness ============== */
 @media (max-width: 767px) {
