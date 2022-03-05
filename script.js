@@ -9,7 +9,7 @@ function updateClockHand() {
   styles(select(".second-hand"), seconds * 6 + 270 + 1);
 
   // update minutes
-  styles(select(".minute-hand"), minutes * 6 + 270 + 1);
+  styles(select(".minute-hand"), minutes * 6 + 270 + 1 + (seconds + 1) / 10);
 
   // update hours
   styles(select(".hour-hand"), hours * 15 + 270 + 1);
