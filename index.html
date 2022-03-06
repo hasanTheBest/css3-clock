@@ -9,8 +9,16 @@
   </head>
   <body>
     <header class="page-title">
-      <b>Fake Functional</b>
-      <h1>CSS Clock</h1>
+      <b>
+        <span
+          style="font-size: 2em"
+          class="tik"
+          title="click to play tik tik sound"
+          >&#9835;</span
+        >
+        Full Functional
+      </b>
+      <h1>JS Wall Clock</h1>
       <small
         ><b
           >&copy;
@@ -99,10 +107,13 @@
           <span class="middle-circle"></span>
         </div>
       </div>
+
+      <!-- tik sound -->
+      <audio class="sound d-none" src="clock-tik.mp3" loop></audio>
+      <!-- <audio class="sound d-none" src="tik-2.wav" autoplay loop muted></audio> -->
     </main>
 
     <!-- Javascript -->
     <script src="script.js"></script>
-    p
   </body>
 </html>
